@@ -5,6 +5,14 @@ services:
     ports:
       - "8026:8025"
       - "1026:1025"
+  app:
+    ports:
+      - "80:80"
+      - "443:3000"
+    environment:
+      ...
+      HOST_DOMAIN: feedback.beatcovid.xyz
+      SSL_AUTO: "true"
   pgdev:
     container_name: fider_pgdev
     restart: always
